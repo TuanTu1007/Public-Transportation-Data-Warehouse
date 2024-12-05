@@ -1,0 +1,201 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="a6ef7d5b-e040-4df4-972b-0bb145e918c2" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Dim Stop In</ID>
+  <Name>Dim Stop In</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-3367" scrolltop="-5292" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="10054" y="13610" backcolor="16777215" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="010000009001b0300100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Dim_Stop_In" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3281" height="3027" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000d10c0000d30b0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_Dim_Stop_In" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-3367</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-5292</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="6bb882d4-04f1-4ecc-b4d3-cd7eba068897">
+    <DataSourceViewID>Public Transportation Transaction DW</DataSourceViewID>
+  </Source>
+  <UnknownMember>Visible</UnknownMember>
+  <ErrorConfiguration dwd:design-time-name="95860e16-d1ce-47e4-98e9-ed3de4f0db9b">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="8d979b5b-6f79-4812-9fc8-0ae21ba9dad5">
+      <ID>Tap In Stops ID</ID>
+      <Name>Tap In Stops ID</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="b425bd91-58b0-468f-bab8-5ded68b1236e">
+          <DataType>Integer</DataType>
+          <NullProcessing>UnknownMember</NullProcessing>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="7c7fa42b-81c0-4d8c-acda-07076f0be9c5">
+            <TableID>dbo_Dim_Stop_In</TableID>
+            <ColumnID>tapInStopsID</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="c3f0f5ae-15a3-4425-9297-516ce565c65e">
+          <AttributeID>Tap In Stops</AttributeID>
+          <Name>Tap In Stops</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="70fc6057-b28e-4cf2-b714-eeb5fd7958ec">
+          <AttributeID>Tap In Stops Name</AttributeID>
+          <Name>Tap In Stops Name</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="c511405c-bdea-48be-a7a0-fc42016f268f">
+          <AttributeID>Tap In Stops Lat</AttributeID>
+          <Name>Tap In Stops Lat</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="a7787401-d36e-42b7-b8f7-1c2076da0fa6">
+          <AttributeID>Tap In Stops Lon</AttributeID>
+          <Name>Tap In Stops Lon</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="e878f25e-16b0-4498-a808-a563cf5af680">
+          <AttributeID>Stop Start Seq</AttributeID>
+          <Name>Stop Start Seq</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="1f58d63d-7b4c-40cc-b54a-022408bad275">
+      <ID>Tap In Stops</ID>
+      <Name>Tap In Stops</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="4ab4c0a1-dc6d-406a-b54f-2226f7e05937">
+          <DataType>WChar</DataType>
+          <DataSize>100</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="2333a6f5-273e-4f23-83fa-493cb7924d13">
+            <TableID>dbo_Dim_Stop_In</TableID>
+            <ColumnID>tapInStops</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="6ac0d107-871a-47d5-a813-33ad4b7ccc89">
+      <ID>Tap In Stops Name</ID>
+      <Name>Tap In Stops Name</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="e25d751c-990d-493e-aec3-265f3f387ef9">
+          <DataType>WChar</DataType>
+          <DataSize>100</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d90492df-bcaa-4325-82c4-b7fe67b80527">
+            <TableID>dbo_Dim_Stop_In</TableID>
+            <ColumnID>tapInStopsName</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="a96913ea-53c4-4f98-b359-a1d9dcd85115">
+      <ID>Tap In Stops Lat</ID>
+      <Name>Tap In Stops Lat</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="fe7e12e7-4e9b-4dc5-bbd1-79872e565678">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a2050698-60e6-46f0-91ff-85e353aeedcd">
+            <TableID>dbo_Dim_Stop_In</TableID>
+            <ColumnID>tapInStopsLat</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="3e35b7a9-0f3f-4960-b28b-e5bc657229b2">
+      <ID>Tap In Stops Lon</ID>
+      <Name>Tap In Stops Lon</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="eef32c81-3a7b-4485-a354-4226497497b5">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a99f43fe-3565-459c-a71f-fa14e54d64ba">
+            <TableID>dbo_Dim_Stop_In</TableID>
+            <ColumnID>tapInStopsLon</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="f2aeb361-fefe-4d3b-815d-e537f62f7d2f">
+      <ID>Stop Start Seq</ID>
+      <Name>Stop Start Seq</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="74fd0309-2d7d-444a-8258-3fa4b571ffc5">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3664bbe7-747c-4ad3-a9e1-c676695d8b75">
+            <TableID>dbo_Dim_Stop_In</TableID>
+            <ColumnID>stopStartSeq</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

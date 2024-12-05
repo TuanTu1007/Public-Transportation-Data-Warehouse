@@ -1,0 +1,96 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>SSAS_Demo</Database>
+    <Server>DESKTOP-01H6OOH\MSSQLSERVER1</Server>
+    <ConnectionString>Data Source=DESKTOP-01H6OOH\MSSQLSERVER1;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>Default</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>x2rfZ5+rRqelbeHi+YnijiyvMu8=10/11/2024 9:43:14 CH10/11/2024 9:43:14 CH</TimeStamp>
+        <ID>
+          <String>Public Transportation Transaction DW</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>3C9BsLgsAomyDmvQ0XwrN7ytoJg=10/11/2024 9:43:49 CH10/11/2024 9:43:48 CH</TimeStamp>
+        <ID>
+          <String>Public Transportation Transaction DW</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>bqYJxYKWBEfVI8npI71okapreHM=10/11/2024 9:47:36 CH10/11/2024 9:44:25 CH</TimeStamp>
+        <ID>
+          <String>Dim Time Out</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>jP6eBoief52UeUj+jNoMYwOwDKA=10/11/2024 9:47:36 CH10/11/2024 9:44:25 CH</TimeStamp>
+        <ID>
+          <String>Dim Stop In</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>d77aJEhJJQayl/TvaE27znY4LfU=10/11/2024 9:55:26 CH10/11/2024 9:44:25 CH</TimeStamp>
+        <ID>
+          <String>Dim Time In</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>06ka0BheoEg2tebJdr3thQC2sxQ=10/11/2024 9:47:36 CH10/11/2024 9:44:25 CH</TimeStamp>
+        <ID>
+          <String>Dim Card</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>BwYKzd5wQXCULnFURDee4Xjva3U=10/11/2024 9:47:35 CH10/11/2024 9:44:25 CH</TimeStamp>
+        <ID>
+          <String>Dim Corridor</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>78SBnMMUh4DUzV2LRANH6efQCzk=10/11/2024 9:47:35 CH10/11/2024 9:44:25 CH</TimeStamp>
+        <ID>
+          <String>Dim Stop Out</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>pAQojB38L4klhsPqQQdLve02tXo=25/11/2024 7:49:05 CH10/11/2024 9:44:25 CHixQZIQfYJ9N3CeUUYlOoDfnStio=10/11/2024 9:44:25 CH10/11/2024 9:44:25 CH</TimeStamp>
+        <ID>
+          <String>Public Transportation Transaction DW</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>2LkW7JNbpVTMMuRoXhp2/1L/LTU=10/11/2024 9:42:46 CH10/11/2024 9:42:45 CH</TimeStamp>
+      <ID>
+        <String>SSAS_Demo</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2024-11-25T12:49:18.623333Z</LastDeployed>
+</DeploymentSnapshot>

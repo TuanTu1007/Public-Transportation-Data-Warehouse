@@ -1,0 +1,292 @@
+﻿-- 1. Top 5 chuyến hành trình có doanh thu thanh toán cao nhất
+SELECT 
+    ORDER(
+		TOPCOUNT([Dim Corridor].[Corridor Name].children, 5, [Measures].[Total Payment Amount]),
+		[Measures].[Total Payment Amount], 
+		DESC) ON ROWS,
+    [Measures].[Total Payment Amount] ON COLUMNS
+FROM [Public Transportation Transaction DW]
+
+-- 2. Thống kê tổng số giao dịch và doanh thu theo ngày và giờ
+SELECT 
+    {[Measures].[Fact Count], [Measures].[Total Payment Amount]} ON COLUMNS, 
+    NONEMPTY(
+        CROSSJOIN(
+            FILTER(
+                [Dim Time In].[Day].Members, 
+                [Dim Time In].[Day].CurrentMember.Name <> "All"
+            ),
+            FILTER(
+                [Dim Time In].[Time In ID].Members,
+                [Dim Time In].[Time In ID].CurrentMember.Name <> "All"
+            )
+        )
+    ) ON ROWS
+FROM [Public Transportation Transaction DW]
+
+
+-- 3. Tổng doanh thu thanh toán theo trạm đi vào năm 2023
+SELECT 
+    [Dim Stop In].[Tap In Stops Name].Members ON ROWS,
+    [Measures].[Total Payment Amount] ON COLUMNS
+FROM [Public Transportation Transaction DW]
+WHERE ([Dim Time In].[Year].[2023])
+
+-- 4. Top 3 trạm đi có số lượng giao dịch cao nhất
+SELECT 
+    TOPCOUNT(
+        FILTER([Dim Stop In].[Tap In Stops Name].Members, 
+               [Dim Stop In].[Tap In Stops Name].CurrentMember.Name <> "All"), 
+        3, 
+        [Measures].[Fact Count]
+    ) ON ROWS,
+    [Measures].[Fact Count] ON COLUMNS
+FROM [Public Transportation Transaction DW]
+
+-- 5. Thống kê số tiền khách hàng đã đi theo hướng có Direction = 1 và có nhiều hơn 2 giao dịch
+SELECT 
+    FILTER(
+        [Dim Card].[Pay Card Name].Members, 
+        [Measures].[Direction] = 1
+        AND [Measures].[Fact Count] > 2
+    ) ON ROWS,
+	{
+		[Measures].[Direction],
+		[Measures].[Fact Count],
+		[Measures].[Pay Amount]
+	} ON COLUMNS 
+FROM [Public Transportation Transaction DW]
+
+
+-- 6. Thời gian, số lượng giao dịch, số thứ tự lên và xuống xe ở những chuyến hành trình không có doanh thu 
+SELECT 
+    NON EMPTY 
+    [Measures].[Fact Count] ON COLUMNS,
+
+    NON EMPTY 
+    CROSSJOIN(
+        FILTER (
+			[Dim Corridor].[Corridor Name].MEMBERS,
+			[Dim Corridor].[Corridor Name].CURRENTMEMBER.Name <> "All" 
+        ),
+        FILTER(
+            [Dim Stop In].[Stop Start Seq].MEMBERS,
+            [Measures].[Total Payment Amount] = 0  
+        ),
+        FILTER(
+            [Dim Stop Out].[Stop End Seq].MEMBERS,
+            [Measures].[Total Payment Amount] = 0  
+        ),
+		FILTER (
+			[Dim Time In].[Time In ID].MEMBERS,
+			[Dim Time In].[Time In ID].CURRENTMEMBER.Name <> "All" 
+		)
+    ) 
+    DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME ON ROWS
+
+FROM [Public Transportation Transaction DW]
+
+
+
+-- 7. Năm sinh nhiều giao dịch nhất trong nhóm tuổi có số lượng giao dịch nhiều nhất
+SELECT 
+    NON EMPTY 
+    {[Measures].[Age Group], [Measures].[Fact Count]} ON COLUMNS,
+    NON EMPTY 
+    { 
+        TOPCOUNT(
+            FILTER(
+                [Dim Card].[Pay Card Birth Date].[Pay Card Birth Date].ALLMEMBERS,
+                [Measures].[Age Group] <> "Unknown"
+            ),
+            1, 
+            [Measures].[Fact Count]
+        )
+    } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME ON ROWS
+FROM [Public Transportation Transaction DW]
+WHERE 
+    ( [Dim Time In].[Year].&[2023] )
+
+
+-- 8. Thống kê tên chuyến hành trình với số lượng Direction =1 và Direction = 0 theo ngày trong tháng 4 năm 2023
+
+SELECT 
+    NON EMPTY 
+        { 
+            [Measures].[Query8_1], 
+            [Measures].[Query8_2] 
+        } ON COLUMNS, 
+    NON EMPTY 
+        { 
+            ([Dim Time In].[Day].[Day].ALLMEMBERS * 
+             [Dim Corridor].[Corridor Name].[Corridor Name].ALLMEMBERS) 
+        } 
+        DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME ON ROWS
+FROM 
+    (
+        SELECT 
+            ( 
+                { [Dim Time In].[PhanCapTimeIn].[Month].&[4]&[2023] } 
+            ) ON COLUMNS
+        FROM 
+            [Public Transportation Transaction DW]
+    )
+WHERE 
+    ( [Dim Time In].[PhanCapTimeIn].[Month].&[4]&[2023] )
+
+
+-- 9. Danh sách tên, số lượng giao dịch và tổng doanh thu của người đi theo direction bằng 0
+SELECT 
+    {
+        [Measures].[Fact Count],
+		[Measures].[Total Payment Amount]
+    } ON COLUMNS,
+    FILTER(
+        [Dim Card].[Pay Card Name].Members,
+        [Measures].[Direction] = 0
+    ) ON ROWS
+FROM [Public Transportation Transaction DW]
+
+
+-- 10. Thống kê số lượng giao dịch của từng vị trí lên xe
+
+SELECT 
+    {[Measures].[Fact Count]} ON COLUMNS,  
+    NON EMPTY 
+    [Dim Stop In].[Tap In Stops Name].MEMBERS ON ROWS  
+FROM 
+    [Public Transportation Transaction DW]
+
+
+-- 11. Top 3 vị trí có số lượng người xuống nhiều nhất
+
+SELECT 
+    {[Measures].[Fact Count]} ON COLUMNS,  
+    NON EMPTY 
+    ORDER(
+        TOPCOUNT(
+            FILTER(
+                [Dim Stop Out].[Tap Out Stops Name].MEMBERS,  
+                [Dim Stop Out].[Tap Out Stops Name].CURRENTMEMBER.Name <> "All"  
+            ),
+            3,  
+            [Measures].[Fact Count] 
+        ),
+        [Measures].[Fact Count],  
+        DESC  
+    ) ON ROWS
+FROM 
+    [Public Transportation Transaction DW]
+
+-- 12. Điểm đi của ngày nào có số lượng giao dịch cao nhất trong toàn bộ các điểm đi trong tháng 4 năm 2023.
+
+SELECT 
+    {[Measures].[Fact Count]} ON COLUMNS, 
+    NON EMPTY 
+    TOPCOUNT(  
+        CROSSJOIN(
+            FILTER(
+                [Dim Stop In].[Tap In Stops Name].MEMBERS, 
+                [Dim Stop In].[Tap In Stops Name].CURRENTMEMBER.Name <> "All"  
+            ),
+            FILTER(
+                [Dim Time In].[Day].MEMBERS, 
+                [Dim Time In].[Day].CURRENTMEMBER.Name <> "All" 
+            )
+        ),
+        1,  
+        [Measures].[Fact Count]  
+    ) ON ROWS
+FROM 
+    [Public Transportation Transaction DW]
+WHERE 
+    ([Dim Time In].[Year].[2023],
+	[Dim Time In].[Month].[4]) 
+
+
+
+-- 13. Thống kê số lượng giao dịch của người dùng theo nhóm tuổi, giới tính, ngân hàng ưa chuộng. 
+WITH 
+MEMBER [Measures].[Age] AS 
+    2024 - [Dim Card].[Pay Card Birth Date].CURRENTMEMBER.MEMBER_VALUE
+
+MEMBER [Measures].[Age Group] AS 
+    IIF(
+        IsEmpty([Dim Card].[Pay Card Birth Date].CURRENTMEMBER.MEMBER_VALUE), "Unknown",
+        IIF([Measures].[Age] < 18, "Under 18",
+        IIF([Measures].[Age] >= 18 AND [Measures].[Age] <= 35, "18-35",
+        IIF([Measures].[Age] >= 36 AND [Measures].[Age] <= 60, "36-60", "60+")))
+    )
+
+SELECT 
+    {
+		[Measures].[Age Group], 
+        [Measures].[Fact Count],
+		[Measures].[Total Payment Amount]
+    } ON COLUMNS,
+    NONEMPTY(
+        CROSSJOIN(
+			FILTER(
+                [Dim Card].[Pay Card Name].MEMBERS, 
+                [Dim Card].[Pay Card Name].CURRENTMEMBER.Name <> "All"  
+            ),
+			FILTER(
+                [Dim Card].[Pay Card Sex].MEMBERS, 
+                [Dim Card].[Pay Card Sex].CURRENTMEMBER.Name <> "All"  
+            ),
+			FILTER(
+                [Dim Card].[Pay Card Bank].MEMBERS, 
+                [Dim Card].[Pay Card Bank].CURRENTMEMBER.Name <> "All"  
+            ),
+			FILTER(
+                [Dim Corridor].[Corridor Name].MEMBERS, 
+                [Dim Corridor].[Corridor Name].CURRENTMEMBER.Name <> "All"  
+            ),
+			FILTER(
+				[Dim Card].[Pay Card Birth Date].[Pay Card Birth Date].ALLMEMBERS, 
+				NOT [Measures].[Age Group] = "Unknown"
+			)
+        )
+    ) ON ROWS
+FROM [Public Transportation Transaction DW]
+
+
+-- 14. Top 5 năm sinh có số giao dịch cao nhất 
+SELECT 
+    NON EMPTY 
+    {[Measures].[Age], [Measures].[Age Group], [Measures].[Fact Count]} ON COLUMNS,
+    NON EMPTY 
+    { TOPCOUNT(
+        FILTER(
+            [Dim Card].[Pay Card Birth Date].[Pay Card Birth Date].ALLMEMBERS, 
+            [Measures].[Age Group] = [Measures].[Age Group]
+        ), 5, [Measures].[Fact Count])
+    } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME ON ROWS
+FROM [Public Transportation Transaction DW]
+WHERE 
+    ( [Dim Time In].[Year].&[2023] )
+
+
+-- 15. Thống kê các ngân hàng được sử dụng để thanh toán
+SELECT 
+  NON EMPTY 
+    [Dim Card].[Pay Card Bank].MEMBERS ON ROWS,
+  NON EMPTY 
+    [Measures].[Fact Count] ON COLUMNS
+FROM [Public Transportation Transaction DW]
+
+
+-- 16. Dùng DRILLDOWN để thống kê số lượng giao dịch theo ngày giờ phút
+SELECT
+    {[Measures].[Fact Count]} ON COLUMNS,
+    DRILLDOWNMEMBER(
+            DRILLDOWNMEMBER(
+                {[Dim Time In].[PhanCapTimeIn].[Day].MEMBERS},
+                [Dim Time In].[PhanCapTimeIn].[Day]
+            ),
+            [Dim Time In].[PhanCapTimeIn].[Hour]
+    ) ON ROWS
+FROM [Public Transportation Transaction DW]
+
+
+

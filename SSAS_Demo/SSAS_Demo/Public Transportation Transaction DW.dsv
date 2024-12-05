@@ -1,0 +1,252 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="48108a52-c671-4de7-950a-fc0ccdbcc5ec" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Public Transportation Transaction DW</ID>
+  <Name>Public Transportation Transaction DW</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+      <Value></Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout />
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>0</DiagramViewPortLeft>
+            <DiagramViewPortTop>0</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>Public Transportation Transaction DW</DataSourceID>
+  <Schema>
+    <xs:schema id="Public_x0020_Transportation_x0020_Transaction_x0020_DW" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="Public_x0020_Transportation_x0020_Transaction_x0020_DW" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="400536fc-3f19-4a7a-978d-bb75726127a1">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="dbo_Fact" msprop:DbTableName="Fact" msprop:FriendlyName="Fact" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="1b0a0298-db4e-41f2-bebb-f4ba683a6476">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="transID" msprop:FriendlyName="transID" msprop:DbColumnName="transID" msprop:design-time-name="eda9f0bc-5c53-4c27-8be3-bbf76d9073d6">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="id_Card" msprop:FriendlyName="id_Card" msprop:DbColumnName="id_Card" msprop:design-time-name="d2435022-916b-40e5-85ca-69f496600e5b" type="xs:int" minOccurs="0" />
+                  <xs:element name="id_Corridor" msprop:FriendlyName="id_Corridor" msprop:DbColumnName="id_Corridor" msprop:design-time-name="fa583ae5-5c4b-42d5-b46c-c68712c20fe6" type="xs:int" minOccurs="0" />
+                  <xs:element name="tapInStopsID" msprop:FriendlyName="tapInStopsID" msprop:DbColumnName="tapInStopsID" msprop:design-time-name="a49a30a7-da43-424c-a3b8-f71cea1ba031" type="xs:int" minOccurs="0" />
+                  <xs:element name="tapOutStopsID" msprop:FriendlyName="tapOutStopsID" msprop:DbColumnName="tapOutStopsID" msprop:design-time-name="cac288f9-e9c0-4985-863d-6aae397bfa34" type="xs:int" minOccurs="0" />
+                  <xs:element name="TimeInID" msprop:FriendlyName="TimeInID" msprop:DbColumnName="TimeInID" msprop:design-time-name="1676afcc-a5ed-41af-a8e4-e83a019bbd87" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="TimeOutID" msprop:FriendlyName="TimeOutID" msprop:DbColumnName="TimeOutID" msprop:design-time-name="9e571fe4-a57d-410a-955e-79e8055b6770" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="direction" msprop:FriendlyName="direction" msprop:DbColumnName="direction" msprop:design-time-name="4202fc08-5e2e-4858-af03-b6d3d88bd5eb" type="xs:int" minOccurs="0" />
+                  <xs:element name="payAmount" msprop:FriendlyName="payAmount" msprop:DbColumnName="payAmount" msprop:design-time-name="8d948829-b02f-46b8-8f58-995eef229aab" type="xs:double" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Dim_Stop_In" msprop:DbTableName="Dim_Stop_In" msprop:FriendlyName="Dim_Stop_In" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="8eca5866-58e2-47f4-85dd-d86ecf91cae5">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="tapInStopsID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="tapInStopsID" msprop:DbColumnName="tapInStopsID" msprop:design-time-name="25704431-e7fe-4fcd-ab0d-b636a40bde5f" type="xs:int" />
+                  <xs:element name="tapInStops" msprop:FriendlyName="tapInStops" msprop:DbColumnName="tapInStops" msprop:design-time-name="6bc4a326-8d35-4ebd-bbcc-45790a3814c7" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="tapInStopsName" msprop:FriendlyName="tapInStopsName" msprop:DbColumnName="tapInStopsName" msprop:design-time-name="8419ef53-7600-4015-9c48-561e099c89e8" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="tapInStopsLat" msprop:FriendlyName="tapInStopsLat" msprop:DbColumnName="tapInStopsLat" msprop:design-time-name="b8646a8f-cacb-4d98-9a5e-48c62be181dd" type="xs:double" minOccurs="0" />
+                  <xs:element name="tapInStopsLon" msprop:FriendlyName="tapInStopsLon" msprop:DbColumnName="tapInStopsLon" msprop:design-time-name="31b3b186-e3fc-42e5-8877-263b56427164" type="xs:double" minOccurs="0" />
+                  <xs:element name="stopStartSeq" msprop:FriendlyName="stopStartSeq" msprop:DbColumnName="stopStartSeq" msprop:design-time-name="6a186d42-757b-4a9c-8900-91e24ac6afd7" type="xs:int" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Dim_Stop_Out" msprop:DbTableName="Dim_Stop_Out" msprop:FriendlyName="Dim_Stop_Out" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="8f3ef547-40c3-4d31-84ba-7dc49c710059">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="tapOutStopsID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="tapOutStopsID" msprop:DbColumnName="tapOutStopsID" msprop:design-time-name="5629f459-8e9b-475e-9175-054e6b5db6e4" type="xs:int" />
+                  <xs:element name="tapOutStops" msprop:FriendlyName="tapOutStops" msprop:DbColumnName="tapOutStops" msprop:design-time-name="34cc9574-8204-4c07-89b7-1c258d37145b" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="tapOutStopsName" msprop:FriendlyName="tapOutStopsName" msprop:DbColumnName="tapOutStopsName" msprop:design-time-name="c2a4c0eb-388b-469d-9d5a-c33f74e36a7a" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="tapOutStopsLat" msprop:FriendlyName="tapOutStopsLat" msprop:DbColumnName="tapOutStopsLat" msprop:design-time-name="f720290a-0810-42c8-9778-e96564f14a21" type="xs:double" minOccurs="0" />
+                  <xs:element name="tapOutStopsLon" msprop:FriendlyName="tapOutStopsLon" msprop:DbColumnName="tapOutStopsLon" msprop:design-time-name="bd78d137-4ba6-4a24-8a44-bceea7f13fc7" type="xs:double" minOccurs="0" />
+                  <xs:element name="stopEndSeq" msprop:FriendlyName="stopEndSeq" msprop:DbColumnName="stopEndSeq" msprop:design-time-name="5b8a3543-2673-4aa6-9e45-0d904c3b39e1" type="xs:int" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Dim_Time_Out" msprop:DbTableName="Dim_Time_Out" msprop:FriendlyName="Dim_Time_Out" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="84f93475-99b4-470d-8471-c798591738e9">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="TimeOutID" msprop:FriendlyName="TimeOutID" msprop:DbColumnName="TimeOutID" msprop:design-time-name="5abc45f0-a183-43f7-beff-b31f4f8cd700" type="xs:dateTime" />
+                  <xs:element name="Day" msprop:FriendlyName="Day" msprop:DbColumnName="Day" msprop:design-time-name="384d249f-f550-4fb0-8c83-c156ce702f92" type="xs:int" minOccurs="0" />
+                  <xs:element name="Month" msprop:FriendlyName="Month" msprop:DbColumnName="Month" msprop:design-time-name="22b15f03-852a-4fb4-a88e-a75ab27dacd6" type="xs:int" minOccurs="0" />
+                  <xs:element name="Year" msprop:FriendlyName="Year" msprop:DbColumnName="Year" msprop:design-time-name="4639c0d5-fb97-4636-9c63-b2edae400cd4" type="xs:int" minOccurs="0" />
+                  <xs:element name="Hour" msprop:FriendlyName="Hour" msprop:DbColumnName="Hour" msprop:design-time-name="5b0c35ce-51f0-4816-b836-145c67901029" type="xs:int" minOccurs="0" />
+                  <xs:element name="Minute" msprop:FriendlyName="Minute" msprop:DbColumnName="Minute" msprop:design-time-name="70d7ff0b-6a10-4029-a044-96ab3180730a" type="xs:int" minOccurs="0" />
+                  <xs:element name="Second" msprop:FriendlyName="Second" msprop:DbColumnName="Second" msprop:design-time-name="61644700-ba64-4d09-b5ba-7c4e712f48fb" type="xs:int" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Dim_Corridor" msprop:DbTableName="Dim_Corridor" msprop:FriendlyName="Dim_Corridor" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="a50091f5-e379-4fc5-a378-df2f132dccca">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="id_Corridor" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="id_Corridor" msprop:DbColumnName="id_Corridor" msprop:design-time-name="facef54f-2fc1-47ab-8e9b-fd75245471ab" type="xs:int" />
+                  <xs:element name="CorridorID" msprop:FriendlyName="CorridorID" msprop:DbColumnName="CorridorID" msprop:design-time-name="128c8bc6-d406-4ba3-8017-ba5857ba4320" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CorridorName" msprop:FriendlyName="CorridorName" msprop:DbColumnName="CorridorName" msprop:design-time-name="3be604c0-5b2d-4df5-b95d-53dc3f46d8bb" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="500" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Dim_Card" msprop:DbTableName="Dim_Card" msprop:FriendlyName="Dim_Card" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="75a9ae82-96fe-4f89-9ef3-f100568a20f9">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="id_Card" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="id_Card" msprop:DbColumnName="id_Card" msprop:design-time-name="be97729f-9d7b-4032-a7f0-85bbb34662ca" type="xs:int" />
+                  <xs:element name="payCardID" msprop:FriendlyName="payCardID" msprop:DbColumnName="payCardID" msprop:design-time-name="61c23478-e508-40cc-ac6d-5033f49ae5cc" type="xs:long" minOccurs="0" />
+                  <xs:element name="payCardBank" msprop:FriendlyName="payCardBank" msprop:DbColumnName="payCardBank" msprop:design-time-name="e0cacaf0-1b40-421c-b74f-31e57775155e" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="payCardName" msprop:FriendlyName="payCardName" msprop:DbColumnName="payCardName" msprop:design-time-name="c85351f1-5f0d-4594-86ec-7badff4fd11b" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="payCardSex" msprop:FriendlyName="payCardSex" msprop:DbColumnName="payCardSex" msprop:design-time-name="f97b99d2-d8a5-4efc-9e6f-f8e0b402cea5" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="payCardBirthDate" msprop:FriendlyName="payCardBirthDate" msprop:DbColumnName="payCardBirthDate" msprop:design-time-name="b698854e-8bbb-4da7-a652-0f0887493b00" type="xs:int" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Dim_Time_In" msprop:DbTableName="Dim_Time_In" msprop:FriendlyName="Dim_Time_In" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="4ab5ef1b-b55b-48ae-8ab2-fd339eda0d60">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="TimeInID" msprop:FriendlyName="TimeInID" msprop:DbColumnName="TimeInID" msprop:design-time-name="1ec98638-4e1f-4c8e-ace8-57c69e691761" type="xs:dateTime" />
+                  <xs:element name="Day" msprop:FriendlyName="Day" msprop:DbColumnName="Day" msprop:design-time-name="6156e60a-1cc7-459b-be88-2440f36fcd66" type="xs:int" minOccurs="0" />
+                  <xs:element name="Month" msprop:FriendlyName="Month" msprop:DbColumnName="Month" msprop:design-time-name="0bb205b3-4d79-467b-b88c-73b1fa819a11" type="xs:int" minOccurs="0" />
+                  <xs:element name="Year" msprop:FriendlyName="Year" msprop:DbColumnName="Year" msprop:design-time-name="ae1d8a5f-8bd5-4b04-910c-a002450de96b" type="xs:int" minOccurs="0" />
+                  <xs:element name="Hour" msprop:FriendlyName="Hour" msprop:DbColumnName="Hour" msprop:design-time-name="fffd8728-f513-4760-a8dc-2ccefb6beeea" type="xs:int" minOccurs="0" />
+                  <xs:element name="Minute" msprop:FriendlyName="Minute" msprop:DbColumnName="Minute" msprop:design-time-name="631c77dd-10b6-4ce8-9ea9-d07b6cccc0d6" type="xs:int" minOccurs="0" />
+                  <xs:element name="Second" msprop:FriendlyName="Second" msprop:DbColumnName="Second" msprop:design-time-name="1d1589ea-af0c-4aa3-aac4-619cecb2b0ce" type="xs:int" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+        <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Fact" />
+          <xs:field xpath="transID" />
+        </xs:unique>
+        <xs:unique name="dbo_Dim_Stop_In_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Dim_Stop_In" />
+          <xs:field xpath="tapInStopsID" />
+        </xs:unique>
+        <xs:unique name="dbo_Dim_Stop_Out_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Dim_Stop_Out" />
+          <xs:field xpath="tapOutStopsID" />
+        </xs:unique>
+        <xs:unique name="dbo_Dim_Time_Out_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Dim_Time_Out" />
+          <xs:field xpath="TimeOutID" />
+        </xs:unique>
+        <xs:unique name="dbo_Dim_Corridor_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Dim_Corridor" />
+          <xs:field xpath="id_Corridor" />
+        </xs:unique>
+        <xs:unique name="dbo_Dim_Card_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Dim_Card" />
+          <xs:field xpath="id_Card" />
+        </xs:unique>
+        <xs:unique name="dbo_Dim_Time_In_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Dim_Time_In" />
+          <xs:field xpath="TimeInID" />
+        </xs:unique>
+        <xs:keyref name="fk_fact_stop_out" refer="dbo_Dim_Stop_Out_Constraint1">
+          <xs:selector xpath=".//dbo_Fact" />
+          <xs:field xpath="tapOutStopsID" />
+        </xs:keyref>
+        <xs:keyref name="fk_fact_corridor" refer="dbo_Dim_Corridor_Constraint1">
+          <xs:selector xpath=".//dbo_Fact" />
+          <xs:field xpath="id_Corridor" />
+        </xs:keyref>
+        <xs:keyref name="fk_fact_card" refer="dbo_Dim_Card_Constraint1">
+          <xs:selector xpath=".//dbo_Fact" />
+          <xs:field xpath="id_Card" />
+        </xs:keyref>
+        <xs:keyref name="fk_fact_time_in" refer="dbo_Dim_Time_In_Constraint1">
+          <xs:selector xpath=".//dbo_Fact" />
+          <xs:field xpath="TimeInID" />
+        </xs:keyref>
+        <xs:keyref name="fk_fact_stop_in" refer="dbo_Dim_Stop_In_Constraint1">
+          <xs:selector xpath=".//dbo_Fact" />
+          <xs:field xpath="tapInStopsID" />
+        </xs:keyref>
+        <xs:keyref name="fk_fact_time_out" refer="dbo_Dim_Time_Out_Constraint1">
+          <xs:selector xpath=".//dbo_Fact" />
+          <xs:field xpath="TimeOutID" />
+        </xs:keyref>
+      </xs:element>
+    </xs:schema>
+    <Public_x0020_Transportation_x0020_Transaction_x0020_DW xmlns="" />
+  </Schema>
+</DataSourceView>

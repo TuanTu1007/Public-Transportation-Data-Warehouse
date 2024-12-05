@@ -1,0 +1,36 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\N3\\SSAS_Demo\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BE260D05-8733-49B8-92E4-CD54E306665C}|SSAS_Demo\\SSAS_Demo.dwproj|D:\\N3\\SSAS_Demo\\SSAS_Demo\\Public Transportation Transaction DW.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{BE260D05-8733-49B8-92E4-CD54E306665C}|SSAS_Demo\\SSAS_Demo.dwproj|solutionrelative:SSAS_Demo\\Public Transportation Transaction DW.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Public Transportation Transaction DW.cube [Design]",
+              "DocumentMoniker": "D:\\N3\\SSAS_Demo\\SSAS_Demo\\Public Transportation Transaction DW.cube",
+              "RelativeDocumentMoniker": "SSAS_Demo\\Public Transportation Transaction DW.cube",
+              "ToolTip": "D:\\N3\\SSAS_Demo\\SSAS_Demo\\Public Transportation Transaction DW.cube [Design]",
+              "RelativeToolTip": "SSAS_Demo\\Public Transportation Transaction DW.cube [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-11-25T12:49:26.545Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
