@@ -61,7 +61,3 @@ Repo này lưu trữ toàn bộ data, source code cho đồ án môn Data wareho
 
 2. [The Data Warehouse Toolkit, 3rd Edition](https://www.kimballgroup.com/data-warehouse-business-intelligence-resources/books/data-warehouse-dw-toolkit/)
 
-
-  
-
-[Hạnh Nguyên](https://www.facebook.com/tnhn1110)
