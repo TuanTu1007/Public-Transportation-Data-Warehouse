@@ -37,8 +37,6 @@ Repo này lưu trữ toàn bộ data, source code cho đồ án môn Data wareho
 	+ Looker
 	+ Power BI
 4. Data mining
-	+ Thiết lập Decision Trees model cho bài toán phân loại
-	+ Thiết lập K-means Clustering cho bài toán gom cụm
 
 ## Achivements
 
@@ -55,7 +53,6 @@ Repo này lưu trữ toàn bộ data, source code cho đồ án môn Data wareho
 6. Biết sử dụng công cụ phục vụ cho việc phân tích và visualize data
 7. Truy vấn dữ liệu đã chiều sử dụng ngôn ngữ MDX
 8. Sử dụng được các công cụ tạo report như SSRS, Power BI
-9. Xây dựng model học máy cho bài toán phân loại (Decision Trees) và gom cụm (K-means)
 
   
 ## References
